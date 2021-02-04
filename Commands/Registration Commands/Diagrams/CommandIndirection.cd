@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="updatable manager gets the scene from the scene manager&#xD;&#xA;">
+    <Position X="1.94" Y="3.929" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="submits the command to its broker">
+    <Position X="2.24" Y="6.828" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="commands get processed">
+    <Position X="2.324" Y="10.122" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Execute() method calls on the &lt;x&gt;able object to call the appropraite &lt;x&gt; registration on the current Scene, accessed through the Scene Manager. From there, the command is sent to the scene's appropriate &lt;x&gt;able manager&#xD;&#xA;">
+    <Position X="2.223" Y="13.3" Height="1.343" Width="3.478" />
+  </Comment>
+  <Comment CommentText="from there the object is finally registered">
+    <Position X="2.352" Y="18.343" Height="0.75" Width="1.7" />
+  </Comment>
+  <Class Name="Updatable">
+    <Position X="2" Y="0.75" Width="1.75" />
+    <Members>
+      <Method Name="~Updatable" Hidden="true" />
+      <Method Name="DeregisterUpdatable" Hidden="true" />
+      <Method Name="operator=" Hidden="true" />
+      <Method Name="Updatable" Hidden="true" />
+      <Method Name="Update" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAQEAEAACAAAAAAAAAAAQCAAAAAAAAAEhBBgAAACAAE=</HashCode>
+      <FileName>Engine\Updatable.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneManager">
+    <Position X="2.25" Y="5.25" Width="1.5" />
+    <Members>
+      <Method Name="~SceneManager" Hidden="true" />
+      <Method Name="Draw" Hidden="true" />
+      <Method Name="initializeStartScene" Hidden="true" />
+      <Method Name="Instance" Hidden="true" />
+      <Method Name="operator=" Hidden="true" />
+      <Method Name="SceneManager" Hidden="true" />
+      <Field Name="sceneManagerInstance" Hidden="true" />
+      <Method Name="setStartScene" Hidden="true" />
+      <Method Name="Terminate" Hidden="true" />
+      <Method Name="Update" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAkgAAAIAAAAAAAAAAAAAQABkAAAAAAQ=</HashCode>
+      <FileName>Engine\SceneManager.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="currentScene" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Scene">
+    <Position X="5.25" Y="4" Width="1.5" />
+    <Members>
+      <Method Name="~Scene" Hidden="true" />
+      <Method Name="Deregister" Hidden="true" />
+      <Method Name="Draw" Hidden="true" />
+      <Field Name="drawManager" Hidden="true" />
+      <Method Name="Initialize" Hidden="true" />
+      <Method Name="operator=" Hidden="true" />
+      <Method Name="Scene" Hidden="true" />
+      <Method Name="SceneEnd" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AARAEgAAAAAgAwAAgAAAAAAAQAABBAAAAAAkAAAAAAA=</HashCode>
+      <FileName>Engine\Scene.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="cmdBroker" />
+      <Field Name="updateManager" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="RegistrationCommandBroker">
+    <Position X="2.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>Engine\RegistrationCommandBroker.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegisterUpdateCommand">
+    <Position X="2.25" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAQAAQAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\RegisterUpdateCommand.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="updateObj" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="UpdatableManager">
+    <Position X="2.25" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAEAAAAAAAAAAAEAAAAgABAAIAAAAgAAAAAAA=</HashCode>
+      <FileName>Engine\UpdatableManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
